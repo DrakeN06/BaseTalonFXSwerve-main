@@ -142,7 +142,7 @@ public final class Constants {
         }
 
         /*Pathplanner Constants */
-        public static final double maxModuleSpeed = 4.5;
+        public static final double maxModuleSpeed = 3; //Changed from 4.5
         public static final double driveBaseRadius = (robotSideLength / 2) * Math.sqrt(2); 
         public static final HolonomicPathFollowerConfig pathPlannerConfig = new HolonomicPathFollowerConfig( // HolonomicPathFollowerConfig, this should likely live in your Constants class
                     new PIDConstants(5.0, 0.0, 0.0), // Translation PID constants
@@ -151,6 +151,14 @@ public final class Constants {
                     driveBaseRadius, // Drive base radius in meters. Distance from robot center to furthest module.
                     new ReplanningConfig() // Default path replanning config. See the API for the options here
             );
+    }
+
+    /*Arm Constants */
+    public static final class Arm {
+        public static final int armMotorID = 9;
+        public static final double armGearRatio = 300/1; //TODO: Change the arm gear ratio
+        public static final double basePercentOutput = 0.5;
+        public static final double maxVoltage = 12.0;
     }
 
     public static final class AutoConstants { //TODO: The below constants are used in the example auto, and must be tuned to specific robot
